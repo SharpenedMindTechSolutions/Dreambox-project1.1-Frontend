@@ -1,0 +1,105 @@
+:root {
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  color: black;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-special-gothic {
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+@layer utilities {
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+/* @keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
+.btn-gradient {
+  background: linear-gradient(90deg, red, blue,green,orange);
+  background-size: 300% 300%;
+  animation: gradientMove 5s ease infinite;
+  color: white;
+}
+
+
+/* Add this in your global CSS */
+.gradient-hover-text {
+  background: linear-gradient(90deg, red, blue, green, orange) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.group:hover .gradient-hover-text {
+  -webkit-text-fill-color: transparent !important;
+}
+
+
+
+.star-glow {
+    position: absolute;
+    background: white;
+    width: 5px;
+    height: 5px;
+    opacity: 0.5;
+    transform: rotate(45deg);
+    animation: starPulse infinite ease-in-out;
+}
+
+.star-glow::before,
+.star-glow::after {
+    content: '';
+    position: absolute;
+    background: white;
+    opacity: 0.6;
+    border-radius: 2px;
+}
+
+.star-glow::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.star-glow::after {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+@keyframes starPulse {
+    0%, 100% {
+        transform: scale(1) rotate(45deg);
+    }
+    50% {
+        transform: scale(1.6) rotate(45deg);
+    }
+}
+
