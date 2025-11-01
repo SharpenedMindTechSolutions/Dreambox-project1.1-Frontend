@@ -10,7 +10,7 @@ import "reactflow/dist/style.css";
 import axios from "axios";
 import NodeDetailDrawer from "./NodeDetailDrawer";
 
-const API = "https://dream-box-project.onrender.com";
+const API = "https://dreambox-backend.vercel.app";
 
 function PreviousDream({ roadmapid }) {
   const [nodes, setNodes] = useState([]);
